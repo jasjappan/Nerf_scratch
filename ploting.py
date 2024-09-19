@@ -133,10 +133,10 @@ def getrays(H:int, W:int, focallength:float, extrensicmatrix):
     return d,camera_origin
     ## 3*3 . 3*1
 
-rayset,camerapoint = getrays(256,256,1200,poses[100])
+rayset,camerapoint = getrays(256,256,1200,poses[1])
 origin = np.array(camerapoint)   
 k = 1
-num_rays = 4000  
+num_rays = 100  
 selected_rays = rayset[np.random.choice(rayset.shape[0], num_rays, replace=False)]
 scaled_rays = selected_rays * k
 fig = plt.figure()
